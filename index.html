@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<!-- saved from url=(0064)file:///C:/Users/AnaFl%C3%A1viaLimaDamasce/Downloads/painel.html -->
+<html lang="pt-br"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão Multiprojetos - PDE</title>
+    <script src="./Gestão Multiprojetos - PDE_files/saved_resource"></script>
+    <script src="./Gestão Multiprojetos - PDE_files/chart.js.baixados"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #f1f5f9; }
+        .tab-active { @apply border-b-4 border-indigo-600 text-indigo-600 font-bold; }
+        .tab-inactive { @apply text-slate-400 hover:text-slate-600 font-medium; }
+        .status-badge { @apply px-2 py-1 rounded-md text-[10px] font-black uppercase; }
+        .status-pendente { background-color: #e2e8f0; color: #475569; }
+        .status-andamento { background-color: #dcfce7; color: #166534; }
+        .status-concluido { background-color: #dbeafe; color: #1e40af; }
+        .status-atraso { background-color: #fee2e2; color: #991b1b; }
+        .status-parado { background-color: #fef3c7; color: #92400e; }
+        .card { @apply bg-white rounded-xl shadow-sm border border-slate-200; }
+        input, select, textarea { @apply border border-slate-200 rounded-lg p-2 focus:ring-2 focus:ring-indigo-500 outline-none; }
+    </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.fixed{position:fixed}.sticky{position:sticky}.inset-0{inset:0px}.top-0{top:0px}.z-40{z-index:40}.z-50{z-index:50}.mx-auto{margin-left:auto;margin-right:auto}.mb-1{margin-bottom:0.25rem}.mb-8{margin-bottom:2rem}.mr-8{margin-right:2rem}.mr-auto{margin-right:auto}.mb-2{margin-bottom:0.5rem}.mb-3{margin-bottom:0.75rem}.mt-2{margin-top:0.5rem}.block{display:block}.inline-block{display:inline-block}.flex{display:flex}.grid{display:grid}.hidden{display:none}.h-\[300px\]{height:300px}.max-h-\[70vh\]{max-height:70vh}.w-1\/4{width:25%}.w-full{width:100%}.min-w-\[150px\]{min-width:150px}.min-w-\[200px\]{min-width:200px}.min-w-\[250px\]{min-width:250px}.max-w-3xl{max-width:48rem}.max-w-\[1600px\]{max-width:1600px}.border-collapse{border-collapse:collapse}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-center{align-items:center}.justify-end{justify-content:flex-end}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-3{gap:0.75rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.gap-8{gap:2rem}.space-y-6 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.5rem * var(--tw-space-y-reverse))}.divide-y > :not([hidden]) ~ :not([hidden]){--tw-divide-y-reverse:0;border-top-width:calc(1px * calc(1 - var(--tw-divide-y-reverse)));border-bottom-width:calc(1px * var(--tw-divide-y-reverse))}.divide-slate-100 > :not([hidden]) ~ :not([hidden]){--tw-divide-opacity:1;border-color:rgb(241 245 249 / var(--tw-divide-opacity, 1))}.overflow-hidden{overflow:hidden}.overflow-x-auto{overflow-x:auto}.overflow-y-auto{overflow-y:auto}.whitespace-pre-line{white-space:pre-line}.rounded-2xl{border-radius:1rem}.rounded-lg{border-radius:0.5rem}.rounded-xl{border-radius:0.75rem}.rounded-sm{border-radius:0.125rem}.border-b{border-bottom-width:1px}.border-l-4{border-left-width:4px}.border-t{border-top-width:1px}.border-l-2{border-left-width:2px}.border-amber-500{--tw-border-opacity:1;border-color:rgb(245 158 11 / var(--tw-border-opacity, 1))}.border-emerald-500{--tw-border-opacity:1;border-color:rgb(16 185 129 / var(--tw-border-opacity, 1))}.border-indigo-500{--tw-border-opacity:1;border-color:rgb(99 102 241 / var(--tw-border-opacity, 1))}.border-rose-500{--tw-border-opacity:1;border-color:rgb(244 63 94 / var(--tw-border-opacity, 1))}.border-slate-100{--tw-border-opacity:1;border-color:rgb(241 245 249 / var(--tw-border-opacity, 1))}.border-slate-200{--tw-border-opacity:1;border-color:rgb(226 232 240 / var(--tw-border-opacity, 1))}.border-l-indigo-400{--tw-border-opacity:1;border-left-color:rgb(129 140 248 / var(--tw-border-opacity, 1))}.border-l-rose-400{--tw-border-opacity:1;border-left-color:rgb(251 113 133 / var(--tw-border-opacity, 1))}.bg-indigo-600{--tw-bg-opacity:1;background-color:rgb(79 70 229 / var(--tw-bg-opacity, 1))}.bg-slate-50{--tw-bg-opacity:1;background-color:rgb(248 250 252 / var(--tw-bg-opacity, 1))}.bg-slate-900\/80{background-color:rgb(15 23 42 / 0.8)}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-slate-100{--tw-bg-opacity:1;background-color:rgb(241 245 249 / var(--tw-bg-opacity, 1))}.bg-slate-800{--tw-bg-opacity:1;background-color:rgb(30 41 59 / var(--tw-bg-opacity, 1))}.p-4{padding:1rem}.p-6{padding:1.5rem}.p-8{padding:2rem}.p-3{padding:0.75rem}.px-10{padding-left:2.5rem;padding-right:2.5rem}.px-4{padding-left:1rem;padding-right:1rem}.px-5{padding-left:1.25rem;padding-right:1.25rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-4{padding-top:1rem;padding-bottom:1rem}.px-2{padding-left:0.5rem;padding-right:0.5rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.py-0\.5{padding-top:0.125rem;padding-bottom:0.125rem}.py-1\.5{padding-top:0.375rem;padding-bottom:0.375rem}.py-5{padding-top:1.25rem;padding-bottom:1.25rem}.pb-2{padding-bottom:0.5rem}.text-left{text-align:left}.text-center{text-align:center}.text-right{text-align:right}.align-top{vertical-align:top}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-\[10px\]{font-size:10px}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.text-\[11px\]{font-size:11px}.text-\[9px\]{font-size:9px}.text-base{font-size:1rem;line-height:1.5rem}.font-black{font-weight:900}.font-bold{font-weight:700}.font-medium{font-weight:500}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.italic{font-style:italic}.leading-relaxed{line-height:1.625}.tracking-tight{letter-spacing:-0.025em}.tracking-tighter{letter-spacing:-0.05em}.tracking-widest{letter-spacing:0.1em}.text-amber-500{--tw-text-opacity:1;color:rgb(245 158 11 / var(--tw-text-opacity, 1))}.text-amber-600{--tw-text-opacity:1;color:rgb(217 119 6 / var(--tw-text-opacity, 1))}.text-emerald-500{--tw-text-opacity:1;color:rgb(16 185 129 / var(--tw-text-opacity, 1))}.text-emerald-600{--tw-text-opacity:1;color:rgb(5 150 105 / var(--tw-text-opacity, 1))}.text-indigo-600{--tw-text-opacity:1;color:rgb(79 70 229 / var(--tw-text-opacity, 1))}.text-rose-500{--tw-text-opacity:1;color:rgb(244 63 94 / var(--tw-text-opacity, 1))}.text-rose-600{--tw-text-opacity:1;color:rgb(225 29 72 / var(--tw-text-opacity, 1))}.text-slate-400{--tw-text-opacity:1;color:rgb(148 163 184 / var(--tw-text-opacity, 1))}.text-slate-500{--tw-text-opacity:1;color:rgb(100 116 139 / var(--tw-text-opacity, 1))}.text-slate-800{--tw-text-opacity:1;color:rgb(30 41 59 / var(--tw-text-opacity, 1))}.text-slate-900{--tw-text-opacity:1;color:rgb(15 23 42 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-indigo-400{--tw-text-opacity:1;color:rgb(129 140 248 / var(--tw-text-opacity, 1))}.text-rose-400{--tw-text-opacity:1;color:rgb(251 113 133 / var(--tw-text-opacity, 1))}.text-slate-600{--tw-text-opacity:1;color:rgb(71 85 105 / var(--tw-text-opacity, 1))}.text-slate-700{--tw-text-opacity:1;color:rgb(51 65 85 / var(--tw-text-opacity, 1))}.opacity-0{opacity:0}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-indigo-200{--tw-shadow-color:#c7d2fe;--tw-shadow:var(--tw-shadow-colored)}.backdrop-blur-sm{--tw-backdrop-blur:blur(4px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-150{transition-duration:150ms}.hover\:bg-indigo-700:hover{--tw-bg-opacity:1;background-color:rgb(67 56 202 / var(--tw-bg-opacity, 1))}.hover\:bg-rose-50:hover{--tw-bg-opacity:1;background-color:rgb(255 241 242 / var(--tw-bg-opacity, 1))}.hover\:bg-slate-50:hover{--tw-bg-opacity:1;background-color:rgb(248 250 252 / var(--tw-bg-opacity, 1))}.hover\:text-slate-600:hover{--tw-text-opacity:1;color:rgb(71 85 105 / var(--tw-text-opacity, 1))}.group:hover .group-hover\:opacity-100{opacity:1}@media (min-width: 768px){.md\:col-span-1{grid-column:span 1 / span 1}.md\:col-span-2{grid-column:span 2 / span 2}.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.md\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}.md\:flex-row{flex-direction:row}}@media (min-width: 1024px){.lg\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}}</style></head>
+<body class="text-slate-800">
+
+    <!-- Header Principal -->
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-40">
+        <div class="max-w-[1600px] mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div>
+                <h1 class="text-2xl font-black text-slate-900 tracking-tighter uppercase italic">Gestão PDE <span class="text-indigo-600">Projetos</span></h1>
+                <p class="text-slate-400 text-xs font-medium">Controle de prazos, responsáveis e obstáculos (Dados Salvos Localmente)</p>
+            </div>
+            
+            <div class="flex items-center gap-3">
+                <nav class="flex gap-8 mr-8">
+                    <button onclick="switchTab(&#39;lista&#39;)" id="btn-tab-lista" class="pb-2 tab-active transition-all">LISTA DE ATIVIDADES</button>
+                    <button onclick="switchTab(&#39;analise&#39;)" id="btn-tab-analise" class="pb-2 tab-inactive transition-all">ANÁLISE E DASHBOARD</button>
+                </nav>
+                <button onclick="addTask()" class="bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2 rounded-lg font-bold text-sm shadow-lg shadow-indigo-200 transition-all">
+                    + NOVA ATIVIDADE
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-[1600px] mx-auto p-6">
+        
+        <!-- ABA: LISTA DE ATIVIDADES -->
+        <section id="tab-content-lista" class="space-y-6">
+            <!-- Filtros Superiores -->
+            <div class="card p-4 flex flex-wrap gap-4 items-center justify-between">
+                <div class="flex flex-wrap gap-4 items-center">
+                    <div class="flex flex-col">
+                        <label class="text-[10px] font-bold text-slate-400 uppercase mb-1">Empreendimento</label>
+                        <select id="filterProject" onchange="renderTasks()" class="text-sm min-w-[200px]"><option value="all">Todos os Projetos</option><option value="BE DUMONT">BE DUMONT</option></select>
+                    </div>
+                    <div class="flex flex-col">
+                        <label class="text-[10px] font-bold text-slate-400 uppercase mb-1">Status</label>
+                        <select id="filterStatus" onchange="renderTasks()" class="text-sm min-w-[150px]">
+                            <option value="all">Todos</option>
+                            <option value="pendente">Pendente</option>
+                            <option value="andamento">Andamento</option>
+                            <option value="concluido">Concluído</option>
+                            <option value="atraso">Atraso</option>
+                            <option value="parado">Parado</option>
+                        </select>
+                    </div>
+                    <div class="flex flex-col">
+                        <label class="text-[10px] font-bold text-slate-400 uppercase mb-1">Busca Rápida</label>
+                        <input type="text" id="searchTerm" oninput="renderTasks()" placeholder="Atividade ou responsável..." class="text-sm min-w-[250px]">
+                    </div>
+                </div>
+                <div class="text-right">
+                    <span id="showingCount" class="text-xs font-bold text-slate-400">Exibindo 4 de 4 atividades</span>
+                </div>
+            </div>
+
+            <!-- Tabela -->
+            <div class="card overflow-hidden">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead class="bg-slate-50 border-b border-slate-200">
+                            <tr class="text-[10px] uppercase text-slate-500 font-bold tracking-widest">
+                                <th class="py-4 px-6">Empreendimento / Setor</th>
+                                <th class="py-4 px-4 w-1/4">Atividade &amp; Histórico</th>
+                                <th class="py-4 px-4">Responsável</th>
+                                <th class="py-4 px-4">Próximo Passo / Problemas</th>
+                                <th class="py-4 px-4">Cronograma (Dias)</th>
+                                <th class="py-4 px-4">Status</th>
+                                <th class="py-4 px-6 text-right">Ação</th>
+                            </tr>
+                        </thead>
+                        <tbody id="taskTableBody" class="text-sm divide-y divide-slate-100"><tr class="hover:bg-slate-50 transition-all group">
+                    <td class="py-5 px-6 align-top">
+                        <div class="text-[10px] font-black text-indigo-600 mb-1">BE DUMONT</div>
+                        <div class="text-[10px] font-bold text-slate-400 bg-slate-100 px-2 py-0.5 rounded-sm inline-block">INCORPORAÇÃO</div>
+                    </td>
+                    <td class="py-5 px-4 align-top">
+                        <div class="font-bold text-slate-800 text-base mb-2">Reprotocolo da LAC (IAM)</div>
+                        <div class="bg-slate-50 p-3 rounded-lg border-l-2 border-slate-200 text-[11px] text-slate-500 leading-relaxed whitespace-pre-line">
+                            <strong class="text-slate-400 uppercase text-[9px] block mb-1">Histórico de Anotações:</strong>
+                            23/03: Fazer reprotocolo até dia 27.
+06/04: Reprotocolo realizado.
+27/04: LAC Aprovada.
+                        </div>
+                    </td>
+                    <td class="py-5 px-4 align-top font-semibold text-slate-600">Isabela</td>
+                    <td class="py-5 px-4 align-top">
+                        <div class="mb-3">
+                            <span class="text-[9px] font-bold text-indigo-400 uppercase block">Próximo Passo:</span>
+                            <span class="text-xs font-medium text-slate-700">Arquivar documentação</span>
+                        </div>
+                        <div>
+                            <span class="text-[9px] font-bold text-rose-400 uppercase block">Problemas:</span>
+                            <span class="text-xs text-slate-500">Nenhum</span>
+                        </div>
+                    </td>
+                    <td class="py-5 px-4 align-top">
+                        <div class="text-[10px] text-slate-400">Início: 23/03/2026</div>
+                        <div class="text-[10px] text-slate-400">Fim: 30/04/2026</div>
+                        <div class="mt-2 text-emerald-600 font-bold text-[10px]">EM DIA</div>
+                    </td>
+                    <td class="py-5 px-4 align-top">
+                        <span class="status-badge status-atraso">atraso</span>
+                    </td>
+                    <td class="py-5 px-6 align-top text-right">
+                        <button onclick="editTask(101)" class="opacity-0 group-hover:opacity-100 bg-slate-800 text-white px-3 py-1.5 rounded-lg text-[10px] font-bold transition-all">EDITAR</button>
+                    </td>
+                </tr><tr class="hover:bg-slate-50 transition-all group">
+                    <td class="py-5 px-6 align-top">
+                        <div class="text-[10px] font-black text-indigo-600 mb-1">BE DUMONT</div>
+                        <div class="text-[10px] font-bold text-slate-400 bg-slate-100 px-2 py-0.5 rounded-sm inline-block">ENGENHARIA</div>
+                    </td>
+                    <td class="py-5 px-4 align-top">
+                        <div class="font-bold text-slate-800 text-base mb-2">Terraplanagem / Ekolist</div>
+                        <div class="bg-slate-50 p-3 rounded-lg border-l-2 border-slate-200 text-[11px] text-slate-500 leading-relaxed whitespace-pre-line">
+                            <strong class="text-slate-400 uppercase text-[9px] block mb-1">Histórico de Anotações:</strong>
+                            23/03: Elaboração de contrato.
+06/04: Laudo GEO recebido, correções BIM feitas.
+                        </div>
+                    </td>
+                    <td class="py-5 px-4 align-top font-semibold text-slate-600">Isabela</td>
+                    <td class="py-5 px-4 align-top">
+                        <div class="mb-3">
+                            <span class="text-[9px] font-bold text-indigo-400 uppercase block">Próximo Passo:</span>
+                            <span class="text-xs font-medium text-slate-700">Enviar projeto final para Ekolist</span>
+                        </div>
+                        <div>
+                            <span class="text-[9px] font-bold text-rose-400 uppercase block">Problemas:</span>
+                            <span class="text-xs text-slate-500">Atraso no laudo GEO inicial</span>
+                        </div>
+                    </td>
+                    <td class="py-5 px-4 align-top">
+                        <div class="text-[10px] text-slate-400">Início: 23/03/2026</div>
+                        <div class="text-[10px] text-slate-400">Fim: 15/05/2026</div>
+                        <div class="mt-2 text-emerald-600 font-bold text-[10px]">EM DIA</div>
+                    </td>
+                    <td class="py-5 px-4 align-top">
+                        <span class="status-badge status-andamento">andamento</span>
+                    </td>
+                    <td class="py-5 px-6 align-top text-right">
+                        <button onclick="editTask(102)" class="opacity-0 group-hover:opacity-100 bg-slate-800 text-white px-3 py-1.5 rounded-lg text-[10px] font-bold transition-all">EDITAR</button>
+                    </td>
+                </tr><tr class="hover:bg-slate-50 transition-all group">
+                    <td class="py-5 px-6 align-top">
+                        <div class="text-[10px] font-black text-indigo-600 mb-1">BE DUMONT</div>
+                        <div class="text-[10px] font-bold text-slate-400 bg-slate-100 px-2 py-0.5 rounded-sm inline-block">FINANCEIRO</div>
+                    </td>
+                    <td class="py-5 px-4 align-top">
+                        <div class="font-bold text-slate-800 text-base mb-2">Captação de Recursos (Fundos)</div>
+                        <div class="bg-slate-50 p-3 rounded-lg border-l-2 border-slate-200 text-[11px] text-slate-500 leading-relaxed whitespace-pre-line">
+                            <strong class="text-slate-400 uppercase text-[9px] block mb-1">Histórico de Anotações:</strong>
+                            23/03: Archx declinou.
+20/04: Realizando modelagens.
+27/04: Avançando com Chroma.
+                        </div>
+                    </td>
+                    <td class="py-5 px-4 align-top font-semibold text-slate-600">Sérgio</td>
+                    <td class="py-5 px-4 align-top">
+                        <div class="mb-3">
+                            <span class="text-[9px] font-bold text-indigo-400 uppercase block">Próximo Passo:</span>
+                            <span class="text-xs font-medium text-slate-700">Finalizar negociação com Chroma</span>
+                        </div>
+                        <div>
+                            <span class="text-[9px] font-bold text-rose-400 uppercase block">Problemas:</span>
+                            <span class="text-xs text-slate-500">Declínio de fundos anteriores (Archx)</span>
+                        </div>
+                    </td>
+                    <td class="py-5 px-4 align-top">
+                        <div class="text-[10px] text-slate-400">Início: 23/03/2026</div>
+                        <div class="text-[10px] text-slate-400">Fim: 30/05/2026</div>
+                        <div class="mt-2 text-emerald-600 font-bold text-[10px]">EM DIA</div>
+                    </td>
+                    <td class="py-5 px-4 align-top">
+                        <span class="status-badge status-andamento">andamento</span>
+                    </td>
+                    <td class="py-5 px-6 align-top text-right">
+                        <button onclick="editTask(103)" class="opacity-0 group-hover:opacity-100 bg-slate-800 text-white px-3 py-1.5 rounded-lg text-[10px] font-bold transition-all">EDITAR</button>
+                    </td>
+                </tr><tr class="hover:bg-slate-50 transition-all group">
+                    <td class="py-5 px-6 align-top">
+                        <div class="text-[10px] font-black text-indigo-600 mb-1">BE DUMONT</div>
+                        <div class="text-[10px] font-bold text-slate-400 bg-slate-100 px-2 py-0.5 rounded-sm inline-block">ADMINISTRATIVO</div>
+                    </td>
+                    <td class="py-5 px-4 align-top">
+                        <div class="font-bold text-slate-800 text-base mb-2">Seguro Obra</div>
+                        <div class="bg-slate-50 p-3 rounded-lg border-l-2 border-slate-200 text-[11px] text-slate-500 leading-relaxed whitespace-pre-line">
+                            <strong class="text-slate-400 uppercase text-[9px] block mb-1">Histórico de Anotações:</strong>
+                            23/03: Aguardando docs.
+13/04: Aguardando cronograma.
+27/04: Sergio assumiu a demanda.
+                        </div>
+                    </td>
+                    <td class="py-5 px-4 align-top font-semibold text-slate-600">Sérgio</td>
+                    <td class="py-5 px-4 align-top">
+                        <div class="mb-3">
+                            <span class="text-[9px] font-bold text-indigo-400 uppercase block">Próximo Passo:</span>
+                            <span class="text-xs font-medium text-slate-700">Obter cronograma da engenharia</span>
+                        </div>
+                        <div>
+                            <span class="text-[9px] font-bold text-rose-400 uppercase block">Problemas:</span>
+                            <span class="text-xs text-slate-500">Falta de documentação da carta convite</span>
+                        </div>
+                    </td>
+                    <td class="py-5 px-4 align-top">
+                        <div class="text-[10px] text-slate-400">Início: 23/03/2026</div>
+                        <div class="text-[10px] text-slate-400">Fim: 01/05/2026</div>
+                        <div class="mt-2 text-emerald-600 font-bold text-[10px]">EM DIA</div>
+                    </td>
+                    <td class="py-5 px-4 align-top">
+                        <span class="status-badge status-atraso">atraso</span>
+                    </td>
+                    <td class="py-5 px-6 align-top text-right">
+                        <button onclick="editTask(104)" class="opacity-0 group-hover:opacity-100 bg-slate-800 text-white px-3 py-1.5 rounded-lg text-[10px] font-bold transition-all">EDITAR</button>
+                    </td>
+                </tr></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABA: ANÁLISE E DASHBOARD -->
+        <section id="tab-content-analise" class="space-y-6 hidden">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div class="card p-6 border-l-4 border-indigo-500">
+                    <p class="text-slate-400 text-xs font-bold uppercase mb-1">Total Geral</p>
+                    <h3 class="text-3xl font-black" id="stat-total">4</h3>
+                </div>
+                <div class="card p-6 border-l-4 border-emerald-500">
+                    <p class="text-emerald-500 text-xs font-bold uppercase mb-1">Concluídas</p>
+                    <h3 class="text-3xl font-black text-emerald-600" id="stat-concluido">0</h3>
+                </div>
+                <div class="card p-6 border-l-4 border-amber-500">
+                    <p class="text-amber-500 text-xs font-bold uppercase mb-1">Em Andamento</p>
+                    <h3 class="text-3xl font-black text-amber-600" id="stat-andamento">2</h3>
+                </div>
+                <div class="card p-6 border-l-4 border-rose-500">
+                    <p class="text-rose-500 text-xs font-bold uppercase mb-1">Média de Atraso (Dias)</p>
+                    <h3 class="text-3xl font-black text-rose-600" id="stat-atraso-media">0.0</h3>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <div class="card p-8">
+                    <h4 class="text-sm font-bold text-slate-500 uppercase mb-8 text-center tracking-widest">Distribuição de Status</h4>
+                    <div class="h-[300px] flex justify-center">
+                        <canvas id="progressChart" style="box-sizing: border-box; display: block; height: 300px; width: 300px;" width="450" height="450"></canvas>
+                    </div>
+                </div>
+                <div class="card p-8 flex flex-col">
+                    <h4 class="text-sm font-bold text-slate-500 uppercase mb-8 text-center tracking-widest">Top Atrasos por Empreendimento</h4>
+                    <div class="h-[300px]">
+                        <canvas id="delayChart" style="box-sizing: border-box; display: block; height: 264.2px; width: 528.3px;" width="792" height="396"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal de Edição -->
+    <div id="taskModal" class="fixed inset-0 bg-slate-900/80 hidden items-center justify-center p-4 z-50 backdrop-blur-sm">
+        <div class="bg-white rounded-2xl max-w-3xl w-full shadow-2xl overflow-hidden animate-in zoom-in duration-150">
+            <div class="p-6 border-b border-slate-100 flex justify-between items-center bg-slate-50">
+                <h2 id="modalTitle" class="text-xl font-black uppercase tracking-tight">Editar Atividade</h2>
+                <button onclick="closeModal()" class="text-slate-400 hover:text-slate-600 text-2xl">✕</button>
+            </div>
+            <div class="p-8 grid grid-cols-1 md:grid-cols-2 gap-6 overflow-y-auto max-h-[70vh]">
+                <input type="hidden" id="editIdx" value="101">
+                
+                <div class="md:col-span-1">
+                    <label class="block text-[10px] font-bold text-slate-400 uppercase mb-1">Empreendimento</label>
+                    <input list="projectsList" id="editProject" class="w-full bg-slate-50">
+                    <datalist id="projectsList"><option value="BE DUMONT"></option></datalist>
+                </div>
+                
+                <div class="md:col-span-1">
+                    <label class="block text-[10px] font-bold text-slate-400 uppercase mb-1">Setor Responsável</label>
+                    <input type="text" id="editSector" class="w-full bg-slate-50" placeholder="Ex: Incorporação, Engenharia...">
+                </div>
+
+                <div class="md:col-span-2">
+                    <label class="block text-[10px] font-bold text-slate-400 uppercase mb-1">Título da Atividade</label>
+                    <input type="text" id="editTitle" class="w-full bg-slate-50 font-bold" placeholder="Nome da tarefa">
+                </div>
+
+                <div>
+                    <label class="block text-[10px] font-bold text-slate-400 uppercase mb-1">Responsável (Pessoa)</label>
+                    <input type="text" id="editOwner" class="w-full bg-slate-50">
+                </div>
+
+                <div>
+                    <label class="block text-[10px] font-bold text-slate-400 uppercase mb-1">Status Atual</label>
+                    <select id="editStatus" class="w-full bg-slate-50 font-bold">
+                        <option value="pendente">Pendente</option>
+                        <option value="andamento">Em Andamento</option>
+                        <option value="concluido">Concluído</option>
+                        <option value="atraso">Atraso</option>
+                        <option value="parado">Parado</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-[10px] font-bold text-slate-400 uppercase mb-1">Data Inicial Planejada</label>
+                    <input type="date" id="editStart" class="w-full bg-slate-50">
+                </div>
+
+                <div>
+                    <label class="block text-[10px] font-bold text-slate-400 uppercase mb-1">Data Final (Prazo)</label>
+                    <input type="date" id="editDeadline" class="w-full bg-slate-50">
+                </div>
+
+                <div class="md:col-span-2">
+                    <label class="block text-[10px] font-bold text-slate-400 uppercase mb-1">Próximo Passo</label>
+                    <input type="text" id="editNextStep" class="w-full bg-slate-50 border-l-4 border-l-indigo-400">
+                </div>
+
+                <div class="md:col-span-2">
+                    <label class="block text-[10px] font-bold text-slate-400 uppercase mb-1">Problemas Enfrentados</label>
+                    <input type="text" id="editProblems" class="w-full bg-slate-50 border-l-4 border-l-rose-400">
+                </div>
+
+                <div class="md:col-span-2">
+                    <label class="block text-[10px] font-bold text-slate-400 uppercase mb-1">Histórico / Notas</label>
+                    <textarea id="editNotes" rows="4" class="w-full bg-slate-50 text-xs" placeholder="Descreva o andamento..."></textarea>
+                </div>
+            </div>
+            <div class="p-6 bg-slate-50 border-t border-slate-100 flex justify-end gap-4">
+                <button onclick="deleteTask()" id="btnDelete" class="mr-auto px-4 py-2 text-rose-500 font-bold uppercase text-[10px] hover:bg-rose-50 rounded-lg">Excluir</button>
+                <button onclick="closeModal()" class="px-6 py-2 text-slate-500 font-bold uppercase text-xs">Cancelar</button>
+                <button onclick="saveTask()" class="bg-indigo-600 text-white px-10 py-3 rounded-xl font-black uppercase text-xs shadow-lg hover:bg-indigo-700 transition-all">Salvar Alterações</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const TODAY = new Date("2026-04-28");
+        let tasks = [];
+
+        // Dados Iniciais de exemplo (apenas se não houver nada salvo)
+        const initialTasks = [
+            { id: 101, project: "BE DUMONT", sector: "INCORPORAÇÃO", title: "Reprotocolo da LAC (IAM)", owner: "Isabela", start: "2026-03-23", deadline: "2026-04-27", status: "concluido", nextStep: "Arquivar documentação", problems: "Nenhum", notes: "23/03: Fazer reprotocolo até dia 27.\n06/04: Reprotocolo realizado.\n27/04: LAC Aprovada." },
+            { id: 102, project: "BE DUMONT", sector: "ENGENHARIA", title: "Terraplanagem / Ekolist", owner: "Isabela", start: "2026-03-23", deadline: "2026-05-15", status: "andamento", nextStep: "Enviar projeto final para Ekolist", problems: "Atraso no laudo GEO inicial", notes: "23/03: Elaboração de contrato.\n06/04: Laudo GEO recebido, correções BIM feitas." },
+            { id: 103, project: "BE DUMONT", sector: "FINANCEIRO", title: "Captação de Recursos (Fundos)", owner: "Sérgio", start: "2026-03-23", deadline: "2026-05-30", status: "andamento", nextStep: "Finalizar negociação com Chroma", problems: "Declínio de fundos anteriores (Archx)", notes: "23/03: Archx declinou.\n20/04: Realizando modelagens.\n27/04: Avançando com Chroma." },
+            { id: 104, project: "BE DUMONT", sector: "ADMINISTRATIVO", title: "Seguro Obra", owner: "Sérgio", start: "2026-03-23", deadline: "2026-05-01", status: "atraso", nextStep: "Obter cronograma da engenharia", problems: "Falta de documentação da carta convite", notes: "23/03: Aguardando docs.\n13/04: Aguardando cronograma.\n27/04: Sergio assumiu a demanda." }
+        ];
+
+        // FUNÇÕES DE PERSISTÊNCIA (LocalStorage)
+        function loadData() {
+            const saved = localStorage.getItem('pde_tasks_data');
+            if (saved) {
+                tasks = JSON.parse(saved);
+            } else {
+                tasks = initialTasks;
+                saveToStorage(); // Salva os iniciais para começar
+            }
+        }
+
+        function saveToStorage() {
+            localStorage.setItem('pde_tasks_data', JSON.stringify(tasks));
+        }
+
+        let mainChart, delayChart;
+
+        function switchTab(tab) {
+            const tabs = ['lista', 'analise'];
+            tabs.forEach(t => {
+                document.getElementById(`tab-content-${t}`).classList.add('hidden');
+                document.getElementById(`btn-tab-${t}`).className = 'pb-2 tab-inactive transition-all';
+            });
+            document.getElementById(`tab-content-${tab}`).classList.remove('hidden');
+            document.getElementById(`btn-tab-${tab}`).className = 'pb-2 tab-active transition-all';
+            if(tab === 'analise') setTimeout(renderCharts, 100);
+        }
+
+        function calculateDelay(deadline, status) {
+            if (status === 'concluido') return 0;
+            const end = new Date(deadline);
+            const diffTime = TODAY - end;
+            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+            return diffDays > 0 ? diffDays : 0;
+        }
+
+        function formatDate(dateStr) {
+            if(!dateStr) return "-";
+            const [y, m, d] = dateStr.split('-');
+            return `${d}/${m}/${y}`;
+        }
+
+        function renderTasks() {
+            const tbody = document.getElementById('taskTableBody');
+            const projectFilter = document.getElementById('filterProject').value;
+            const statusFilter = document.getElementById('filterStatus').value;
+            const search = document.getElementById('searchTerm').value.toLowerCase();
+            
+            tbody.innerHTML = '';
+            const filtered = tasks.filter(t => {
+                const mP = projectFilter === 'all' || t.project === projectFilter;
+                const mS = statusFilter === 'all' || t.status === statusFilter;
+                const mSearch = t.title.toLowerCase().includes(search) || t.owner.toLowerCase().includes(search) || t.sector.toLowerCase().includes(search);
+                return mP && mS && mSearch;
+            });
+
+            filtered.forEach(t => {
+                const delay = calculateDelay(t.deadline, t.status);
+                const row = document.createElement('tr');
+                row.className = 'hover:bg-slate-50 transition-all group';
+                row.innerHTML = `
+                    <td class="py-5 px-6 align-top">
+                        <div class="text-[10px] font-black text-indigo-600 mb-1">${t.project}</div>
+                        <div class="text-[10px] font-bold text-slate-400 bg-slate-100 px-2 py-0.5 rounded-sm inline-block">${t.sector}</div>
+                    </td>
+                    <td class="py-5 px-4 align-top">
+                        <div class="font-bold text-slate-800 text-base mb-2">${t.title}</div>
+                        <div class="bg-slate-50 p-3 rounded-lg border-l-2 border-slate-200 text-[11px] text-slate-500 leading-relaxed whitespace-pre-line">
+                            <strong class="text-slate-400 uppercase text-[9px] block mb-1">Histórico de Anotações:</strong>
+                            ${t.notes || 'Nenhum registro.'}
+                        </div>
+                    </td>
+                    <td class="py-5 px-4 align-top font-semibold text-slate-600">${t.owner}</td>
+                    <td class="py-5 px-4 align-top">
+                        <div class="mb-3">
+                            <span class="text-[9px] font-bold text-indigo-400 uppercase block">Próximo Passo:</span>
+                            <span class="text-xs font-medium text-slate-700">${t.nextStep || '-'}</span>
+                        </div>
+                        <div>
+                            <span class="text-[9px] font-bold text-rose-400 uppercase block">Problemas:</span>
+                            <span class="text-xs text-slate-500">${t.problems || '-'}</span>
+                        </div>
+                    </td>
+                    <td class="py-5 px-4 align-top">
+                        <div class="text-[10px] text-slate-400">Início: ${formatDate(t.start)}</div>
+                        <div class="text-[10px] text-slate-400">Fim: ${formatDate(t.deadline)}</div>
+                        ${delay > 0 ? `<div class="mt-2 text-rose-600 font-black text-xs">⚠️ ${delay} DIAS ATRASO</div>` : `<div class="mt-2 text-emerald-600 font-bold text-[10px]">EM DIA</div>`}
+                    </td>
+                    <td class="py-5 px-4 align-top">
+                        <span class="status-badge status-${t.status}">${t.status}</span>
+                    </td>
+                    <td class="py-5 px-6 align-top text-right">
+                        <button onclick="editTask(${t.id})" class="opacity-0 group-hover:opacity-100 bg-slate-800 text-white px-3 py-1.5 rounded-lg text-[10px] font-bold transition-all">EDITAR</button>
+                    </td>
+                `;
+                tbody.appendChild(row);
+            });
+            document.getElementById('showingCount').innerText = `Exibindo ${filtered.length} de ${tasks.length} atividades`;
+            updateGeneralStats(filtered);
+        }
+
+        function updateGeneralStats(data) {
+            const total = data.length;
+            const c = data.filter(t => t.status === 'concluido').length;
+            const a = data.filter(t => t.status === 'andamento').length;
+            let totalDelay = 0;
+            data.forEach(t => totalDelay += calculateDelay(t.deadline, t.status));
+            const mediaDelay = total > 0 ? (totalDelay / total).toFixed(1) : 0;
+            document.getElementById('stat-total').innerText = total;
+            document.getElementById('stat-concluido').innerText = c;
+            document.getElementById('stat-andamento').innerText = a;
+            document.getElementById('stat-atraso-media').innerText = mediaDelay;
+        }
+
+        function renderCharts() {
+            const ctx = document.getElementById('progressChart').getContext('2d');
+            const ctxDelay = document.getElementById('delayChart').getContext('2d');
+            const statusCounts = {
+                concluido: tasks.filter(t => t.status === 'concluido').length,
+                andamento: tasks.filter(t => t.status === 'andamento').length,
+                atraso: tasks.filter(t => t.status === 'atraso').length,
+                outros: tasks.filter(t => !['concluido','andamento','atraso'].includes(t.status)).length
+            };
+            if(mainChart) mainChart.destroy();
+            mainChart = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Concluído', 'Andamento', 'Atraso', 'Outros'],
+                    datasets: [{
+                        data: Object.values(statusCounts),
+                        backgroundColor: ['#3b82f6', '#fbbf24', '#ef4444', '#cbd5e1'],
+                        borderWidth: 0
+                    }]
+                },
+                options: { cutout: '80%', plugins: { legend: { position: 'bottom' } } }
+            });
+            const projectDelays = {};
+            tasks.forEach(t => {
+                const d = calculateDelay(t.deadline, t.status);
+                projectDelays[t.project] = (projectDelays[t.project] || 0) + d;
+            });
+            if(delayChart) delayChart.destroy();
+            delayChart = new Chart(ctxDelay, {
+                type: 'bar',
+                data: {
+                    labels: Object.keys(projectDelays),
+                    datasets: [{
+                        label: 'Total de Dias de Atraso',
+                        data: Object.values(projectDelays),
+                        backgroundColor: '#ef4444'
+                    }]
+                },
+                options: { indexAxis: 'y', plugins: { legend: { display: false } }, scales: { x: { beginAtZero: true } } }
+            });
+        }
+
+        function editTask(id) {
+            const t = tasks.find(x => x.id === id);
+            document.getElementById('editIdx').value = id;
+            document.getElementById('editProject').value = t.project;
+            document.getElementById('editSector').value = t.sector || '';
+            document.getElementById('editTitle').value = t.title;
+            document.getElementById('editOwner').value = t.owner;
+            document.getElementById('editStatus').value = t.status;
+            document.getElementById('editStart').value = t.start || '';
+            document.getElementById('editDeadline').value = t.deadline;
+            document.getElementById('editNextStep').value = t.nextStep || '';
+            document.getElementById('editProblems').value = t.problems || '';
+            document.getElementById('editNotes').value = t.notes || '';
+            document.getElementById('modalTitle').innerText = "Editar Atividade";
+            document.getElementById('btnDelete').classList.remove('hidden');
+            document.getElementById('taskModal').classList.replace('hidden', 'flex');
+        }
+
+        function addTask() {
+            document.getElementById('editIdx').value = 'new';
+            document.getElementById('editProject').value = '';
+            document.getElementById('editSector').value = '';
+            document.getElementById('editTitle').value = '';
+            document.getElementById('editOwner').value = '';
+            document.getElementById('editStatus').value = 'pendente';
+            document.getElementById('editStart').value = '';
+            document.getElementById('editDeadline').value = '';
+            document.getElementById('editNextStep').value = '';
+            document.getElementById('editProblems').value = '';
+            document.getElementById('editNotes').value = '';
+            document.getElementById('modalTitle').innerText = "Nova Atividade";
+            document.getElementById('btnDelete').classList.add('hidden');
+            document.getElementById('taskModal').classList.replace('hidden', 'flex');
+        }
+
+        function deleteTask() {
+            const id = parseInt(document.getElementById('editIdx').value);
+            if(confirm("Tem certeza que deseja excluir esta atividade?")) {
+                tasks = tasks.filter(t => t.id !== id);
+                saveToStorage();
+                updateDropdowns();
+                renderTasks();
+                closeModal();
+            }
+        }
+
+        function closeModal() {
+            document.getElementById('taskModal').classList.replace('flex', 'hidden');
+        }
+
+        function saveTask() {
+            const id = document.getElementById('editIdx').value;
+            const data = {
+                id: id === 'new' ? Date.now() : parseInt(id),
+                project: document.getElementById('editProject').value.toUpperCase(),
+                sector: document.getElementById('editSector').value.toUpperCase(),
+                title: document.getElementById('editTitle').value,
+                owner: document.getElementById('editOwner').value,
+                status: document.getElementById('editStatus').value,
+                start: document.getElementById('editStart').value,
+                deadline: document.getElementById('editDeadline').value,
+                nextStep: document.getElementById('editNextStep').value,
+                problems: document.getElementById('editProblems').value,
+                notes: document.getElementById('editNotes').value
+            };
+            if(id === 'new') tasks.push(data);
+            else {
+                const idx = tasks.findIndex(x => x.id === parseInt(id));
+                tasks[idx] = data;
+            }
+            saveToStorage();
+            updateDropdowns();
+            renderTasks();
+            closeModal();
+        }
+
+        function updateDropdowns() {
+            const projects = [...new Set(tasks.map(t => t.project))].sort();
+            const filter = document.getElementById('filterProject');
+            const datalist = document.getElementById('projectsList');
+            const current = filter.value;
+            filter.innerHTML = '<option value="all">Todos os Projetos</option>';
+            datalist.innerHTML = '';
+            projects.forEach(p => {
+                const opt = document.createElement('option');
+                opt.value = p; opt.innerText = p;
+                filter.appendChild(opt);
+                const dlOpt = document.createElement('option');
+                dlOpt.value = p;
+                datalist.appendChild(dlOpt);
+            });
+            filter.value = current || 'all';
+        }
+
+        window.onload = () => {
+            loadData();
+            updateDropdowns();
+            renderTasks();
+        };
+    </script>
+
+</body></html>
